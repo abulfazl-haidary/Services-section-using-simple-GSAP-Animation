@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services section </title>
+    <script src="gsap.min.js"></script>
+    <script src="all.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="content">
+            <div class="logo">
+                <h1 class="name">Abulfazl</h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <section class="services">
+        <div class="inner-width">
+            <div class="heading">
+                <h1 class="section-header">Services</h1>
+            </div>
+            <div class="main-content">
+                <div class="service">
+                    <i class="fab fa-dev"></i>
+                    <h3>Web  development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing, Lorem ipsum dolor sit. sit amet consectetur adipisicing elit. Quibusdam, consectetur!</p>
+                </div>
+
+                <div class="service">
+                    <i class="fab fa-sketch"></i>
+                    <h3>Web  Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing, sit amet consectetur adipisicing elit.Lorem ipsum dolor sit. Quibusdam, consectetur!</p>
+                </div>
+
+                <div class="service">
+                    <i class="fas fa-code"></i>
+                    <h3>Freelancing</h3>
+                    <p>Lorem ipsum dolor, sit amet sit amet consectetur adipisicing consectetur adipisicing elit Lorem ipsum dolor sit. Quibusdam, consectetur!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const timeline = gsap.timeline({ defaults: { duration: 1.2 }});
+
+        timeline
+        .from('.header', { duration: 1, y: '-90px', ease: 'circ' })
+        .from('.services', { duration: .8 , x: '100px', ease: 'power1', opacity: '0'})
+        .from('.service', { opacity: 0, stagger: .4, ease: 'circ'})
+
+        const reversButton = document.querySelector('.name');
+
+        reversButton.addEventListener('click', () => {
+            timeline.timeScale(2);
+            timeline.reverse();
+        })
+
+
+    </script>
+
+</body>
+</html>
